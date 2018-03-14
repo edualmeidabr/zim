@@ -1,0 +1,63 @@
+[{
+        "title": "O que somos?",
+        "content": "O Zim é uma plataforma que conecta alunos e professores. Alunos que precisam de aulas particulares e professores disponíveis para ensinar.",
+        "isTeacher": false
+    },
+    {
+        "title": "Como o Zim funciona?",
+        "content": "O aluno baixa o app, preenche as informações solicitadas e a forma de pagamento. Após o cadastro, escolhe a disciplina desejada, o professor e agenda sua aula. Após a aula existe a possibilidade de avaliar o professor.",
+        "isTeacher": false
+    },
+    {
+        "title": "Como os professores são selecionados?",
+        "content": "Os professores passam por uma avaliação documental (nada consta criminal, RG, CPF) além de análise constante de atendimentos e conduta.",
+        "isTeacher": false
+    },
+    {
+        "title": "Quando e onde posso solicitar uma aula?",
+        "content": "As marcações podem ser feitas até 3 horas antes do horário desejado. O local para realização da aula é definido pelo aluno (atente-se ao escolher o endereço). Em geral é mais comum que a aula aconteça na casa do aluno.",
+        "isTeacher": false
+    },
+    {
+        "title": "Com qual antecedência posso cancelar o agendamento de uma aula?",
+        "content": "Sua aula pode ser cancelada a qualquer momento. Para cancelamentos ocorridos com até 3 horas de antecedência do horário da aula será cobrada uma taxa de R$20,00. Este é um prazo justo para que você possa desistir da solicitação. Esse valor serve para compensar o professor parceiro pelo horário em que não poderá mais atender nenhum outro aluno.",
+        "isTeacher": false
+    },
+    {
+        "title": "O que somos?",
+        "content": "O Zim é uma plataforma que conecta alunos e professores. Alunos que precisam de aulas particulares e professores disponíveis para ensinar.",
+        "isTeacher": true
+    },
+    {
+        "title": "Como o Zim funciona?",
+        "content": "O aluno baixa o app, preenche as informações solicitadas e a forma de pagamento. Após o cadastro, escolhe a disciplina desejada, o professor e agenda sua aula. Após a aula existe a possibilidade de avaliar o professor.",
+        "isTeacher": true
+    },
+    {
+        "title": "Como os professores são selecionados?",
+        "content": "Os professores passam por uma avaliação documental (nada consta criminal, RG, CPF) além de análise constante de atendimentos e conduta.",
+        "isTeacher": true
+    },
+    {
+        "title": "Quando e onde os alunos podem solicitar uma aula?  ",
+        "content": "As marcações podem ser feitas até 3 horas antes do horário desejado. O local para realização da aula é definido pelo aluno. Em geral é mais comum que a aula aconteça na casa do aluno.",
+        "isTeacher": true
+    },
+    {
+        "title": "Com qual antecedência o aluno poderá cancelar a minha aula?  ",
+        "content": "Sua aula pode ser cancelada a qualquer momento. Para cancelamentos ocorridos com até 3 horas de antecedência do horário da aula será cobrada uma taxa de R$15,00. Esse valor serve para compensar o professor parceiro pelo horário em que não poderá mais atender nenhum outro aluno.",
+        "isTeacher": true
+    },
+    {
+        "title": "Quanto vou receber?",
+        "content": "O professor parceiro receberá R$60,00 hora/aula.",
+        "isTeacher": true
+    },
+    {
+        "title": "Como vou receber?",
+        "content": "O pagamento será efetuado na sua conta bancária, cadastrada item “Meus Ganhos”. Para cada transferência haverá a cobrança de R$10,00, automaticamente descontado no momento da transferência para a sua conta.",
+        "isTeacher": true
+    }
+
+
+]

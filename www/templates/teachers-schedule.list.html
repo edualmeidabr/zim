@@ -1,0 +1,31 @@
+<ion-modal-view class="modal-schedule">
+    <ion-header-bar>
+        <!--<h1 class="title"><i class="icon ion-calendar"></i> {{dateSchedule}}</h1>-->
+        <div class="buttons">
+            <button class="button button-icon" ng-click="closeModalHour()">
+                <i class="icon ion-close"></i>
+        </button>
+        </div>
+
+        <div class="header-date" style="margin-left: -30px">
+            <div class="day">{{day}}</div>
+            <div class="date">{{month}} / {{year}}</div>
+        </div>
+        <div class="clearfix"></div>
+    </ion-header-bar>
+    <ion-content style="margin-top: 100px;">
+        <ion-list class="schedule-list">
+            <ion-item class="item" ng-repeat="hour in horas" ng-click="selectHour(hour)" ng-class="{'disabled'  : hour.disabled, 'selected'  : hour.selected}">
+                <div class="hour">{{hour.inicio}} <small>às {{hour.fim}}</small></div>
+                <div class="reserved" ng-show="{{hour.disabled}}">Horário Indisponível</div>
+                <div class="close" ng-show="hour.selected"><i class="icon ion-close"></i></div>
+            </ion-item>
+        </ion-list>
+        <div class="error" ng-show="horas.length < 1">
+            <p><i class="icon ion-clock"></i></p>
+            <p>Não há mais horários disponíveis neste dia.</p>
+        </div>
+    </ion-content>
+    <button class="button bg-principal margin-top-2x button-circled pull-fixed-right " ng-click="confirmScheduleDay()" ng-show="horas.length > 0"><i class="icon ion-arrow-right-c"></i></button>
+    <!--<ion-footer-bar></ion-footer-bar>-->
+</ion-modal-view>

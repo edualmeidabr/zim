@@ -1,0 +1,52 @@
+<!--<ion-popover-view style="height: 125px;">
+    <ion-content style="text-align: center">
+        <h2><i class="icon ion-calendar"></i></h2>
+        <h3>{{dateSchedule}}</h3>
+
+        <p>Disponível de 08:00 às 12:00</p>
+    </ion-content>
+</ion-popover-view>
+-->
+
+<ion-modal-view class="modal-schedule">
+    <ion-header-bar>
+        <!--<h1 class="title"><i class="icon ion-calendar"></i> {{dateSchedule}}</h1>-->
+        <div class="buttons">
+            <button class="button button-icon" ng-click="closeModalHour()">
+                <i class="icon ion-close"></i>
+        </button>
+        </div>
+    </ion-header-bar>
+    <ion-content style="text-align: center">
+        <div class="header-date">
+            <div class="day">{{day}}</div>
+            <div class="date">{{month}} / {{year}}</div>
+        </div>
+        <!--<input type="text" ng-model="hour" ng-click="openHour()">-->
+        <button class="button button-full start-hour" ng-click="openHour()">
+          <span ng-show="hour == ''"><i class="icon ion-clock"></i> Defina o início da Aula</span><span class="hour" ng-show="hour != ''">{{hour}}</span>
+        </button>
+        <div class="col col-100 color-principal" ng-show="disponivel != ''">{{disponivel}}</div>
+
+
+        <div class="col col-100 margin-top" style="margin: 50px 0;" ng-show="hour != ''">
+            <h3>Duração da Aula</h3>
+            <div class="item range" style="border: none; background: transparent !important;">
+                <input type="range" ng-model="duration" name="duration" min="1" max="5" value="{{duration}}" ng-change="changeDuration(duration)">
+            </div>
+            <div class="duration text-center">
+                <span>{{arrDurationText[duration]}}</span></small>
+            </div>
+        </div>
+
+        <div class="col col-100 margin-top" style="margin: 50px 0; color: #999" ng-show="hour != ''">
+            <p>A aula terminará às {{hourEnd}}
+        </div>
+
+        <!--<div class="col col-100 margin-top" style="margin: 50px 0;" ng-show="hour != ''">
+            <h4>{{hour + arrDurationVAlue[duration]}}</h4>
+        </div>-->
+    </ion-content>
+    <button class="button bg-principal margin-top-2x button-circled pull-fixed-right " ng-click="addScheduleDay()"><i class="icon ion-arrow-right-c"></i></button>
+    <!--<ion-footer-bar></ion-footer-bar>-->
+</ion-modal-view>

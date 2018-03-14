@@ -1,0 +1,15 @@
+[{
+        "id": 1,
+        "name": "Fundamental 1",
+        "selected": false
+    }, {
+        "id": 2,
+        "name": "Fundamental 2",
+        "selected": false
+    },
+    {
+        "id": 3,
+        "name": "Médio",
+        "selected": false
+    }
+]

@@ -1,0 +1,29 @@
+<ion-content scroll="false" style="min-height: 100px; !important">
+    <!--<div class="row">
+        <div class="col col-100">
+            <ion-list class="availability-shift-list">
+                <ion-checkbox ng-model="shift.selected" ng-repeat="shift in shiftDays" ng-if="$index < 3" ng-click="selectShift($index, shift.selected)">{{shift.name}} <small>{{shift.first}} às {{shift.last}}</small></ion-checkbox>
+            </ion-list>
+        </div>
+    </div>-->
+
+    <div class="row">
+        <div class="col" style="text-align: center">
+            Disponibilidade
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="range" style="background: url('img/line.png') repeat-x;">
+
+                <ion-custom-range type="double" ng-model="personalized" min="0" max="{{hours.length-1}}" step="1" style="width: 100% !important; "></ion-custom-range>
+                <div style="width: 45%"></div>
+                <!--<i class="icon ion-clock" style="color: transparent"></i><i class="icon ion-clock" style="color: transparent"></i><i class="icon ion-clock" style="color: transparent"></i>-->
+            </div>
+            <div class="radius text-center ">
+                <small> {{hours[personalized.minValue]}} às {{hours[personalized.maxValue]}}</small>
+            </div>
+        </div>
+    </div>
+</ion-content>

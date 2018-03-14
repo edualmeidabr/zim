@@ -1,0 +1,32 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-content scroll="true">
+        {{gain.labels}}
+        <div id="graph" ng-if="gain.length > 0">
+            <div class="card">
+                <div class="item item-divider">
+                    Ganhos nesta semana
+                </div>
+                <div class="item item-text-wrap">
+                    <canvas id="line" class="chart chart-line" data="gain.data" labels="gain.labels" legend="true" series="gain.series" colours="gain.colours" options="{showTooltips: false}"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="item item-divider">
+                    Ganhos nos últimos 6 meses
+                </div>
+                <div class="item item-text-wrap">
+                    <canvas id="bar" class="chart chart-bar" data="datal" labels="labelsl" legend="true" series="seriesl" colours="coloursl" options="{showTooltips: false}"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="error" ng-show="gain.length <= 0">
+            <p><i class="icon ion-cash"></i></p>
+            <p>Você ainda não tem ganhos programados</p>
+        </div>
+    </ion-content>
+</ion-view>

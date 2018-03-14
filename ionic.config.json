@@ -1,0 +1,9 @@
+{
+  "name": "Zim",
+  "app_id": "995e1a76",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
+  "watchPatterns": []
+}

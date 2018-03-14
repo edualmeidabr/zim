@@ -1,0 +1,111 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-content padding="false" class="no-padding no-margin">
+        <div class="header-teacher-profile no-padding no-margin">
+            <div class="container-profile">
+                <img class="profile-picture" ng-src="{{profile.img != '' && profile.img || 'img/profile-no-photo.png' }}" />
+                <!--<div class="img-profile-container" style="background: url(img/{{profile.avatar}}) center center no-repeat;"></div>-->
+
+                <!--<div class="name">{{profile.name}}</div>-->
+
+
+
+
+                <div>
+                    <div class="name">{{profile.name}}</div>
+                    <div class="rating-container">
+                        <div class="rating-s" style="width: {{profile.ratingPercentage}}%"></div>
+                        <div class="rating-o"></div>
+                        <div class="clearfix"></div>
+                        <!--<div class="rating-text">{{profile.rating}}({{profile.ratingTotal}})</div>-->
+                    </div>
+                </div>
+                <button class="button btn-description" ng-click="openModalDescription()" ng-show="profile.description != ''">Descrição</button>
+
+                <button class="button btn-assessment" ng-click="openModalAssessents()" ng-show="profile.assessments.length > 0">Avaliações</button>
+                <button class="button btn-assessment" ng-show="profile.assessments.length == 0">Sem Avaliações</button>
+
+
+
+            </div>
+
+
+
+        </div>
+        <!--
+        <tab-slide-box>
+            <div class="tsb-icons">
+                <div class="tsb-ic-wrp">
+                    <a href="javascript:;">PERFIL</a>
+                    <a href="javascript:;">AGENDA</a>
+
+                    <a href="javascript:;">AVALIAÇÕES</a>
+                </div>
+            </div>
+            <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+
+                <ion-slide>
+                    <p>Professor particular de matemática e física há mais de 5 anos, universitário, estudante de Administração de Empresas.</p>
+                    <p>Idade: 23 anos</p>
+                    <p>20 aulas agendadas no Zim</p>
+                    <p>Atende aos bairros: Copacabana, Flamengo, Botafogo e Ipanema</p>
+
+                </ion-slide>
+
+                <ion-slide>
+                    <onezone-datepicker datepicker-object="onezoneDatepicker">
+
+
+
+                    </onezone-datepicker>
+                </ion-slide>
+
+                <ion-slide>
+
+
+
+                    <ion-list class="list-items profile-assessment">
+                        <ion-item class="item item-icon-right" ng-repeat="assessment in profile.assessments">
+
+                            <div class="col-xs-2">
+                                <div span class="ico-item" style="background-image: url(img/{{assessment.avatar}})"></div>
+                            </div>
+
+                            <div class="col-xs-8">
+                                <div class="title">{{assessment.name}}</div>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <div class="rating-container list-rating pull-right">
+                                    <div class="rating-s" style="width: {{assessment.ratingPercentage}}%"></div>
+                                    <div class="rating-o"></div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12 description item-text-wrap">
+                                <p>{{assessment.description}}</p>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                        </ion-item>
+                    </ion-list>
+                </ion-slide>
+            </ion-slide-box>
+        </tab-slide-box>-->
+
+        <onezone-datepicker datepicker-object="onezoneDatepicker">
+
+
+
+        </onezone-datepicker>
+    </ion-content>
+
+    <ion-footer-bar class="bar button-bar bg-principal">
+        <button class="button bg-principal schedule-button" ng-click="goCheckout()"><i class="icon ion-checkmark"></i> Agendar</button>
+    </ion-footer-bar>
+</ion-view>

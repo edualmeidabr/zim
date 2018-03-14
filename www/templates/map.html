@@ -1,0 +1,40 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content scroll="false">
+        <div id="map"></div>
+
+
+        <!--<div id="map_canvas">
+            <div id="searchBox">
+                <input type="text" id="query" size="30" />
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>-->
+
+        <div class="error" ng-show="errorMap">
+            <p><i class="icon ion-map"></i></p>
+            <p>Não foi possível obter a sua localização.</p>
+        </div>
+
+        <!--<div class="controls">
+            <i class="icon ion-location placeholder-icon"></i>
+            <input id="pac-input" type="text" placeholder="Onde deseja marcar a aula?" ng-focus="geolocate()">
+        </div>-->
+
+        <div class="controls">
+            <div style="width: 30px; float: left;">
+                <i class="icon ion-location placeholder-icon" style="font-size: 24px;"></i>
+            </div>
+            <div style="width: calc(100% - 30px); float: left;">
+                <ion-google-place placeholder="Onde deseja marcar a aula?" ng-model="address" name="address" location-changed="selectAddress" style="z-index: 9999; border: none !important;  " />
+            </div>
+        </div>
+    </ion-content>
+    <!--
+    <ion-footer-bar class="bar button-bar bg-principal" ng-show="!errorMap">
+        <button class="button bg-principal" ng-click="selectMyLocation()"><i class="icon ion-location icon-lg"></i> Utilizar o meu local atual</button>
+    </ion-footer-bar>
+    -->
+</ion-view>

@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col" style="text-align: center">
+        Disponibilidade
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="range">
+            <ion-custom-range type="double" ng-model="personalized" min="0" max="{{hours.length-1}}" step="1"></ion-custom-range>
+        </div>
+        <div class="radius text-center ">
+            <small> {{hours[personalized.minValue]}} às {{hours[personalized.maxValue]}}</small>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title"><img src="img/logo.png"></h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeLogin()"><i class="icon ion-close"></i></button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="signin login">
+        <div class="user-profile-form padding ">
+            <form name="loginForm" novalidate="" ng-submit="doLogin(loginForm)">
+                <label class="item item-input">
+				<input type="text" placeholder="Email" name="email" ng-class="{ 'input-error' : loginForm.email.$invalid && loginForm.$submitted }"  ng-model="userProfile.email" required>
+			</label>
+
+                <label class="item item-input">
+				<input type="password" placeholder="Senha" name="password" ng-class="{ 'input-error' : loginForm.password.$invalid && loginForm.$submitted }"  ng-model="userProfile.password" required>
+			</label>
+
+
+                <div class="text-center padding">
+                    <button class="button bg-principal button-circled"><i class="icon ion-arrow-right-c"></i></button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-modal-view>

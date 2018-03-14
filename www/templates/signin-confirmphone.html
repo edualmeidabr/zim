@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content class="signin" style="margin-top: 60px;">
+        <p class="text-center">Enviamos um SMS para o seu telefone com um código. Por favor, digite-o no campo abaixo.</p>
+        <div class="user-profile-form padding">
+            <form name="VerifyCodeForm" novalidate="" ng-submit="doVerifyCode(VerifyCodeForm)">
+                <label class="item item-input">
+                    <input type="number" placeholder="Código" name="codigo" ng-model="userProfile.codigo"  required>
+                </label>
+                <div class="margin-top  text-center">
+                    <button class="button bg-principal button-circled"><i class="icon ion-arrow-right-c"></i></button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

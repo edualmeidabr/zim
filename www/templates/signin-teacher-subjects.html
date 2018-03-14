@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-content class="signin-slide padding">
+        <div class="row">
+            <h3>Matérias que leciona</h3>
+        </div>
+        <ion-list>
+            <ion-checkbox ng-model="subject.selected" ng-repeat="subject in subjects" ng-click="subject.selected && showPopupSubject(subject)" mode="ios">{{subject.title}}</ion-checkbox>
+        </ion-list>
+
+
+    </ion-content>
+
+    <button class="button button-circled bg-principal  button-bottom-right button-bottom-signin fixed" ng-click="saveSubjects()"><i class="icon ion-arrow-right-c"></i></button>
+</ion-view>

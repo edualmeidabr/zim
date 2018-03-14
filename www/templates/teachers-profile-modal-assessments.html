@@ -1,0 +1,39 @@
+<ion-modal-view class="modal">
+    <ion-header-bar>
+        <h1 class="title">Avaliações</h1>
+        <div class="buttons">
+            <button class="button button-icon " ng-click="closeModalAssessents()">
+                <i class="icon ion-close"></i>
+        </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list class="list-items profile-assessment">
+            <ion-item class="item item-icon-right" ng-repeat="assessment in profile.assessments">
+
+                <div class="col-xs-2">
+                    <div span class="ico-item" style="background-image: url({{assessment.avatar}})"></div>
+                </div>
+
+                <div class="col-xs-8">
+                    <div class="title">{{assessment.name}}</div>
+                </div>
+
+                <div class="col-xs-2">
+                    <div class="rating-container list-rating pull-right">
+                        <div class="rating-s" style="width: {{assessment.ratingPercentage}}%"></div>
+                        <div class="rating-o"></div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-xs-12 description item-text-wrap">
+                    <p>{{assessment.description}}</p>
+                </div>
+
+                <div class="clearfix"></div>
+
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,77 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-content>
+        <form name="checkoutForm" novalidate="" ng-submit="goFinalized(checkoutForm)">
+
+            <div class="checkout padding">
+                <div class="row">
+                    <div class="col col-80">
+                        <span class="title">Endereço</span><br>
+                        <span class="text">{{userProfile.order.address.street}}</span>
+                    </div>
+
+                    <div class="col col-20">
+                        <input type="text" mask="9?9?9?9" placeholder="Nº" name="number" ng-class="{ 'input-error' : checkoutForm.number.$invalid && checkoutForm.$submitted }" ng-model="userProfile.order.address.number" required>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col col-100">
+                        <input type="text" placeholder="Complemento" ng-model="userProfile.order.address.comp">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col margin-top-2x">
+                        <span class="title">Professor</span><br>
+                        <span class="text">{{userProfile.order.teacher.name}}</span>
+                    </div>
+                </div>
+
+                <div class="row margin-top-2x">
+                    <div class="col">
+                        <span class="title">Data</span><br>
+                        <span class="text" ng-repeat="schedule in userProfile.order.schedule">{{schedule.date}} - {{schedule.hour}} às {{schedule.hourEnd}}<br></span>
+                    </div>
+                </div>
+
+                <div class="row margin-top-2x">
+                    <div class="col">
+                        <span class="title">Valor</span><br>
+                        <span class="text">R${{total}}</span>
+                    </div>
+                </div>
+
+                <div class="row margin-top-2x">
+                    <div class="col">
+                        <label class="item item-input item-select" style="margin: 0 !important; padding: 0 !important;">
+                            <div class="input-label title" style="font-size: 16px !important;">
+                                Cartão
+                            </div>
+                            
+                            <select ng-model="userProfile.order.card" name="card" ng-class="{ 'input-error' : checkoutForm.card.$invalid && checkoutForm.$submitted }" ng-options="card.number for card in userProfile.cards" style="font-size: 16px !important;" ng-hide="userProfile.cards.length == 0" required>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row margin-top-2x">
+                    <div class="col" style="text-align: right">
+                        <a class="button-add-credit-card" ng-click="openPopoverCC($event)" ng-show="userProfile.cards.length > 0"><i class="icon ion-plus-circled"></i> Pagar com outro cartão</a>
+                        <a class="button-add-credit-card" ng-click="openPopoverCC($event)" ng-show="userProfile.cards.length == 0"><i class="icon ion-plus-circled"></i> Cadastrar um cartão</a>
+                    </div>
+                </div>
+            </div>
+    </ion-content>
+
+    <!--<ion-footer-bar class="bar button-bar bg-principal">
+        <button class="button bg-principal schedule-button" style="position: fixed !important; bottom: 0 !important;"><i class="icon ion-checkmark"></i> Finalizar</button>
+    </ion-footer-bar>-->
+    <ion-footer-bar class="bar button-bar bg-principal" style="position: absolute !important; bottom: 0 !important;">
+        <button class="button bg-principal schedule-button"><i class="icon ion-checkmark"></i> Finalizar</button>
+    </ion-footer-bar>
+</ion-view>

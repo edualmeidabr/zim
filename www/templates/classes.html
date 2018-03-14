@@ -1,0 +1,31 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content>
+        <ion-list class="list-items classes-list" ng-show="classes.length > 0">
+            <ion-item class="item" ng-repeat="item in classes" ng-click="openClass(item)">
+                <div class="icon-container">
+                    <div class="ico-item" style="background-image: url({{item.avatar}})"></div>
+                </div>
+                <div class="title-container">
+                    <div class="title">
+                        <span>{{item.name}}<br>
+                        <small class="status " ng-class="[item.status]">{{item.descriptionStatus}}</small>
+                        </span>
+                    </div>
+                </div>
+                <div class="date-container">
+                    <span class="date"><i class="icon ion-calendar"></i> {{item.date}}</span><br>
+                    <span class="hour"><i class="icon ion-clock"></i> {{item.hour}}</span>
+                </div>
+                <!--<i class="icon ion-chevron-right"></i>-->
+            </ion-item>
+        </ion-list>
+
+        <div class="error" ng-show="classes.length <= 0">
+            <p><i class="icon ion-social-buffer"></i></p>
+            <p>Você ainda não tem aulas agendadas</p>
+        </div>
+    </ion-content>
+</ion-view>

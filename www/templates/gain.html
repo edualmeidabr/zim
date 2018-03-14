@@ -1,0 +1,101 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-view>
+        <ion-nav-title>
+            <img src="img/logo.png">
+        </ion-nav-title>
+        <ion-content>
+            <tab-slide-box tab="0">
+                <div class="tsb-icons">
+                    <div class="tsb-ic-wrp">
+                        <a href="javascript:;">GANHOS</a>
+                        <a href="javascript:;">DADOS</a>
+                    </div>
+                </div>
+                <ion-slide-box active-slide="activeSlide" show-pager="false" on-slide-changed="slideHasChanged($index)" class="signin-slide teacher-profile" scroll="false" style="padding: 0">
+
+                    <ion-slide>
+                        <div class="gain" ng-show="gain.total > 0">
+                            <div class="total">
+                                <div class="valor">R${{gain.semana}}</div>
+                                <div class="descricao">Próximo Saque</div>
+                            </div>
+                            <div class="week" style="width: 100vw !important; margin-left: -15px;">
+                                <div class="valor">R${{gain.total}}</div>
+                                <div class="descricao">Ganhos totais</div>
+                            </div>
+
+                            <!--<div class="obs padding text-center">
+                                <small style="font-size: 11px">*Valores com descontos pelo uso da plataforma</small>
+                            </div>-->
+                        </div>
+
+                        <div class="error" ng-show="gain.total <= 0">
+                            <p><i class="icon ion-cash"></i></p>
+                            <p>Você ainda não tem ganhos programados</p>
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <form name="changeBankForm" novalidate="" ng-submit="doChangeBank(changeBankForm)">
+                            <div class="user-profile-form">
+
+                                <label class="item item-input">
+                                    <input type="text" placeholder="Banco"  ng-model="userProfile.dados.banco" style="background: #FFF;">
+                                </label>
+                                <label class="item item-input">
+                                    <input type="text" placeholder="Agência"  ng-model="userProfile.dados.agencia" style="background: #FFF;">
+                                </label>
+                                <label class="item item-input">
+                                    <input type="text" placeholder="Conta"  ng-model="userProfile.dados.conta" style="background: #FFF;">
+                                </label>
+
+                                <label class="item item-input">
+                                    <input type="text" placeholder="Nome Completo"  ng-model="userProfile.dados.nome_titular" style="background: #FFF;">
+                                </label>
+
+                                <label class="item item-input">                                    
+                                    <input type="text" ui-mask="999.999.999-99"  ui-mask-placeholder ui-mask-placeholder-char="_" ng-model="userProfile.dados.cpf_titular" placeholder="CPF do Titular" name="cpf" style="background: #FFF;">
+                                </label>
+
+                                <div style="margin-top: 30px; padding-left: 20px; padding-right: 70px;">
+                                    <div style="width: 70%;">
+                                        <p style="font-size: 14px; font-weight: 700; line-height: 0 !important;">Tipo de Conta</p>
+                                        <ion-list>
+                                            <ion-radio name="tipo_conta_banco" ng-model="userProfile.dados.tipo_conta_banco" ng-value="1" style="max-width: 100% !important;">Corrente</ion-radio>
+                                            <ion-radio name="tipo_conta_banco" ng-model="userProfile.dados.tipo_conta_banco" ng-value="2" style="max-width: 100% !important;">Poupança</ion-radio>
+                                        </ion-list>
+                                    </div>
+
+                                    <div style="margin-top: 30px; width: 70%;">
+                                        <p style="font-size: 14px; font-weight: 700; line-height: 0 !important;">Peridiocidade</p>
+                                        <ion-list style="max-width: 100% !important;">
+                                            <ion-radio name="peridiocidade" ng-model="userProfile.dados.peridiocidade" ng-value="1" style="max-width: 100% !important;">Semanal</ion-radio>
+                                            <ion-radio name="peridiocidade" ng-model="userProfile.dados.peridiocidade" ng-value="2" style="max-width: 100% !important;">Quinzenal</ion-radio>
+                                            <ion-radio name="peridiocidade" ng-model="userProfile.dados.peridiocidade" ng-value="3" style="max-width: 100% !important;">Mensal</ion-radio>
+                                        </ion-list>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div style="width: 100%;">
+                                        <a style="display:inline-block; font-size: 12px; line-height: 14px !important;">Para cada transferência haverá cobrança de R$10,00, que será automaticamente descontada.</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                            <button class="button bg-principal  button-bottom-right button-bottom-right-slide"><i class="icon ion-arrow-right-c"></i></button>
+
+                            <div class="clearfix"></div>
+
+                            </div>
+                        </form>
+
+                    </ion-slide>
+                </ion-slide-box>
+            </tab-slide-box>
+        </ion-content>
+    </ion-view>

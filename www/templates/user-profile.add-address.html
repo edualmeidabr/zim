@@ -1,0 +1,33 @@
+<ion-popover-view class="address-popover">
+    <ion-content scroll="false">
+
+        <form name="addressForm" novalidate="" ng-submit="doAddAddress(addressForm)">
+            <div class="user-profile-add-address-form list">
+
+                <label class="item item-input">
+							
+							<input type="text" placeholder="Nome do Endereço" name="name" ng-class="{ 'input-error' : addressForm.name.$invalid && addressForm.$submitted }"  ng-model="address.name" required>
+						</label>
+                <label class="item item-input">
+						
+							<!--<input type="text" placeholder="Endereço" name="street" ng-class="{ 'input-error' : addressForm.street.$invalid && addressForm.$submitted }"  ng-model="address.street" required>-->
+                            <!--<ion-google-place placeholder="Endereço" ng-model="street" name="street" location-changed="addLocation" style="z-index: 9999" />-->
+                            <ion-google-place placeholder="Onde deseja marcar a aula?" ng-model="street" name="street" location-changed="selectAddress" style="z-index: 9999; border: none !important; " />
+						</label>
+
+                <label class="item item-input">
+							
+							<input type="number" placeholder="Nº" name="number" ng-class="{ 'input-error' : addressForm.number.$invalid && addressForm.$submitted }"  ng-model="address.number" required>
+						</label>
+                <label class="item item-input">
+							
+							<input type="text" placeholder="Complemento" name="comp" ng-class="{ 'input-error' : addressForm.comp.$invalid && addressForm.$submitted }"  ng-model="address.comp">
+						</label>
+
+                <button class="button bg-principal margin-top-2x button-circled pull-right-2x"><i class="icon ion-arrow-right-c"></i></button>
+
+
+            </div>
+        </form>
+    </ion-content>
+</ion-popover-view>

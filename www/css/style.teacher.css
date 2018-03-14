@@ -1,0 +1,188 @@
+/*******TEACHER****/
+
+
+/****SIGNIN**/
+
+.neighborhood .item {
+    border: 1px solid #FFF !important;
+    background: #efefef;
+    color: #333 !important;
+    font-weight: 300 !important;
+    padding: 5px;
+}
+
+.neighborhood .item .icon {
+    color: #CCC;
+    font-size: 16px;
+}
+
+.availability .item {
+    border: none;
+}
+
+.availability-shift-list small {
+    color: #999;
+    font-size: 12px;
+}
+
+.popup-shift .popup,
+.popup-level .popup {
+    padding: 0 !important;
+    background: #FFF;
+}
+
+.popup-shift .popup-title,
+.popup-level .popup-title {
+    color: #53c5cf;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.popup-shift .popup-body,
+.popup-level .popup-body {
+    /*min-height: 300px;*/
+    min-height: 180px;
+    padding: 0 !important;
+    margin: 0;
+    top: 0 !important;
+}
+
+.popup-shift .popup-body {
+    min-height: 110px;
+}
+
+.popup-level .popup-body {
+    min-height: 150px;
+}
+
+.popup-shift .list,
+.popup-level .list {
+    margin: 0 !important;
+    top: 0;
+}
+
+.popup-shift .list .item,
+.popup-level .list .item {
+    border: none;
+    font-weight: 100;
+}
+
+
+/***HOME SCHEDULE**/
+
+.schedule-teacher-item-list {
+    padding: 0 !important;
+}
+
+.schedule-teacher-item-list .item .name-container,
+.schedule-teacher-item-list .item .avatar,
+.schedule-teacher-item-list .hour {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.schedule-teacher-list,
+.schedule-teacher-list .item {
+    border: none !important;
+}
+
+.schedule-teacher-list .title {
+    font-weight: 700;
+    font-size: 24px;
+    height: 45px;
+}
+
+.schedule-teacher-item-list .item {
+    border-top: 1px solid #efefef !important;
+    height: auto;
+    margin: 0 !important;
+    padding: 0 !important;
+    padding: 20px 0 20px 0 !important;
+}
+
+.schedule-teacher-item-list .item:first-child {
+    border: none !important;
+}
+
+.schedule-teacher-item-list .item .name-container {
+    font-size: 16px;
+}
+
+.schedule-teacher-item-list .item .name-container .name {
+    color: #000;
+}
+
+.schedule-teacher-item-list .item .name-container .duration {
+    color: #999;
+    font-size: 14px;
+    width: 100%;
+}
+
+.schedule-teacher-item-list .avatar {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    margin: 0 !important;
+    margin-right: 15px;
+}
+
+.schedule-teacher-item-list .hour {
+    color: #53c5cf;
+    font-size: 22px;
+    width: 60px;
+    /*font-weight: 700;*/
+}
+
+
+/****CHARTS****/
+
+.bar-legend li span,
+.line-legend li span {
+    background: transparent !important;
+    font-weight: 100;
+    font-size: 18px;
+    color: #53c5cf;
+}
+
+.card {
+    border: 1px solid #efefef;
+}
+
+.card .item-divider {
+    background: transparent;
+    font-weight: 300;
+    text-align: center;
+    border: none !important;
+}
+
+.card .chart-container {
+    border-top: none;
+}
+
+.gain .week,
+.gain .total {
+    height: 40vh;
+    text-align: center;
+    padding: 15vh 0;
+}
+
+.gain .week {
+    background: #53c5cf;
+    color: #FFF;
+}
+
+.gain .week .valor,
+.gain .total .valor {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.gain .total {
+    color: #53c5cf;
+}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 280px) {}

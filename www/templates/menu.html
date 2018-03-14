@@ -1,0 +1,78 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button class="button-icon button-clear ion-chevron-left">
+            </ion-nav-back-button>
+
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left" style="background: #000000">
+        <ion-header-bar ng-show="isLogged()" style=" width: 100%; position: relative; height: 150px !important; width: 100%; border: none;  margin: 0 auto; ">
+            <div menu-close ng-click="goUserProfile()" style="width: 100%;  height: 150px !important; text-align: center !important; margin: 0 auto; ">
+                <img class="profile-picture" style="margin: 0 auto;" id="photo-menu" src="{{userProfile.img != '' ? userProfile.img : 'img/profile-no-photo.png' }}" />
+                <h3 class="name" style="font-size: 16px; width: 100%;  text-align: center !important; ">{{userProfile.name}}</h3>
+            </div>
+            <div class="clearfix"></div>
+        </ion-header-bar>
+        <ion-content style="position: relative;">
+            <!--<p style="color: #FFF">{{userProfile.img}}</p>-->
+            <!--<p style="color: #FFF">{{userProfile.isLogged}}</p>-->
+
+            <ion-list>
+                <!--<ion-item menu-close ng-click="login()">
+                    Login
+                </ion-item>
+                <ion-item menu-close href="#/app/profile">
+                    <i class="icon ion-person"></i> Meu Perfil
+                </ion-item>
+                <ion-item menu-close href="#/app/addesses">
+                    <i class="icon ion-location"></i> Meus Endereços
+                </ion-item>
+                -->
+                <ion-item menu-close href="#/app/subjects" ng-show="isLogged() && !userProfile.isTeacher">
+                    <i class="icon ion-checkmark"></i> Agendar
+                </ion-item>
+
+                <ion-item menu-close href="#/app/classes" ng-show="isLogged() && !userProfile.isTeacher">
+                    <i class="icon ion-social-buffer"></i> Minhas Aulas
+                </ion-item>
+
+                <ion-item menu-close href="#/app/hometeacher" ng-show="isLogged() && userProfile.isTeacher">
+                    <i class="icon ion-calendar"></i> Agenda
+                </ion-item>
+
+                <ion-item menu-close href="#/app/messages" ng-show="isLogged()">
+                    <i class="icon ion-chatbox"></i> Mensagens
+                </ion-item>
+
+
+                <ion-item menu-close href="#/app/gain" ng-show="isLogged() && userProfile.isTeacher">
+                    <i class="icon ion-cash"></i> Meus Ganhos
+                </ion-item>
+
+            </ion-list>
+
+            <div class="custom-footer" style="padding-top: 20px !important">
+                <ion-list>
+                    <ion-item menu-close href="#/app/help" ng-show="isLogged()">
+                        <i class="icon ion-help"></i> Ajuda
+                    </ion-item>
+                    <ion-item menu-close href="#" ng-click="openModalTerms()">
+                        <i class="icon ion-ios-information"></i> Termos de Uso
+                    </ion-item>
+                    <ion-item menu-close href="#/app/logout" ng-show="isLogged()">
+                        <i class="icon ion-close"></i> Logout
+                    </ion-item>
+                </ion-list>
+            </div>
+
+        </ion-content>
+
+
+    </ion-side-menu>
+</ion-side-menus>

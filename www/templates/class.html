@@ -1,0 +1,64 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content class="class">
+        <div class="header-teacher-profile no-padding no-margin header-teacher-class" ng-class="[class.status]">
+            <div class="container-profile">
+                <img class="profile-picture" src="{{class.avatar != '' && class.avatar || 'img/profile-no-photo.png'}}" />
+            </div>
+            <div class="name">{{class.name}}</div>
+
+            <div class="row">
+                <div class="col  no-padding no-margin">
+                    <span class="ico-item"><img ng-src="img/subject-icons/{{class.icon}}" width=""></span><span class="title">{{class.subject}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col no-padding no-margin" ng-if="class.status == 'scheduled'">
+                    <a ng-href="#/app/messages/{{class.usuario_id}}" class="button"><i class="icon ion-chatbox"></i> Chat </a>
+                </div>
+                <div class="col no-padding" ng-if="class.status == 'scheduled' && class.canCancel">
+                    <button class="button" ng-click="cancelClass(class.id)"><i class="icon ion-close-circled"></i> Cancelar </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="class-container">
+            <div ng-if="class.status == 'scheduled' || class.status == 'waiting' || (class.status == 'realized' && !class.showEvaluation)">
+                <h3><i class="icon ion-calendar"></i> {{class.date}}</h3>
+                <h4><i class="icon ion-clock"></i> {{class.hour}}</h4>
+                <div ng-if="class.status == 'waiting'" style="color:#ababab">Aguardando confirmação do pagamento</div>
+
+
+                <div ng-if="class.status == 'scheduled' && userProfile.isTeacher">
+                    {{class.address.street}}, {{class.address.number}} {{class.address.comp}}<br/>
+                    <button class="button" ng-click="openMap()"><i class="icon ion-map"></i> Abrir Maps </button>
+
+                </div>
+            </div>
+
+            <div class="error" ng-if="class.status == 'cancel'">
+                <p><i class="icon ion-close"></i></p>
+                <p>Esta aula foi cancelada.</p>
+            </div>
+
+            <div class="avaliation" ng-if="class.status == 'realized' && class.showEvaluation">
+                <p class="title">Avalie</p>
+                <rating ng-model="rating.rate" max="rating.max"></rating>
+                <textarea placeholder="Comente sobre a aula" ng-model="rating.comment"></textarea>
+                <button class="button bg-principal button-circled pull-right-2x" ng-click="sendRating()"><i class="icon ion-arrow-right-c"></i></button>
+            </div>
+
+            <div class="clearfix"></div>
+
+
+            <div ng-show="class.canProblem" style="margin-top: 50px !important;">
+                <button class="button bg-principal margin-top-2x" ng-click="openProblemModal()">
+                    <i class="icon ion-alert-circled"></i> Informar um Problema                
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content class="signin">
+
+        <div class="user-profile-form padding">
+            <form name="registerForm" novalidate="" ng-submit="doRegister(registerForm)">
+                <div class="photo-user text-center">
+                    <img id="user-photo" class="profile-picture no-photo" src="img/camera-icon.png" ng-click="getPhoto('user-photo')" />
+
+                </div>
+                <label class="item item-input">
+				<input type="text" placeholder="Nome" name="name" ng-class="{ 'input-error' : registerForm.name.$invalid && registerForm.$submitted }"  ng-model="userProfile.name" required>
+			</label>
+
+
+
+                <label class="item item-input">
+				<input type="email" placeholder="Email" name="email" ng-class="{ 'input-error' : registerForm.email.$invalid && registerForm.$submitted }"  ng-model="userProfile.email" required>
+			</label>
+
+
+                <label class="item item-input">
+				<!--<input type="text" mask="(99)9?9999-9999" clean="true" mask-restrict="reject" placeholder="Telefone"  name="phone" ng-class="{ 'input-error' : registerForm.phone.$invalid && registerForm.$submitted }"  ng-model="userProfile.phone" required>-->
+                <input type="text" ui-mask="(99)?99999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_" placeholder="Telefone"  name="phone" ng-class="{ 'input-error' : registerForm.phone.$invalid && registerForm.$submitted }"  ng-model="userProfile.phone" required>
+			</label>
+
+                <label class="item item-input">
+				<input type="password" placeholder="Senha" name="password" ng-class="{ 'input-error' : registerForm.password.$invalid && registerForm.$submitted }"  ng-model="userProfile.password" required>
+			</label>
+
+
+                <div class="toggle-container padding">
+                    <label class="toggle" style="float: left">                
+                        <input type="checkbox" ng-model="userProfile.isTeacher">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>                    
+                    </label>
+                    <span class="margin-top" style="margin-left: 10px; float: left; color: #000; font-weight: 300">Sou professor</span>
+
+                </div>
+                <div class="margin-top clearfix"></div>
+
+                <div class="margin-top  text-center">
+                    <button class="button bg-principal button-circled"><i class="icon ion-arrow-right-c"></i></button>
+                </div>
+            </form>
+
+            <div class="hasaccount-container" ng-click="login()">
+                Já tem conta? Entre
+            </div>
+
+
+
+        </div>
+    </ion-content>
+
+
+</ion-view>

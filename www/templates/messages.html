@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content>
+        <ion-list class="list-items messages-list">
+            <ion-item class="item item-avatar" ng-repeat="item in messages" ng-href="#/app/messages/{{item.id}}">
+                <img ng-src="{{item.avatar.length ? item.avatar : 'img/profile-no-photo.png'}}">
+                <!--<span class="unread" ng-if="item.unread > 0"> {{item.unread}}</span>-->
+                <div class="title-container">
+                    <div class="title">
+                        <span>{{item.name}}
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

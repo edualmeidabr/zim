@@ -1,0 +1,13 @@
+<ion-view>
+    <ion-nav-title align-title="center">
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content class="list-items list-subjects">
+        <ion-list>
+            <ion-item class="item" ng-repeat="subject in subjectList" ng-click="chooseSubject(subject)">
+                <!--/{{subject.id}}-->
+                <span class="ico-item"><img ng-src="img/subject-icons/{{subject.icon}}" width=""></span> <span class="title">{{subject.title}}</span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

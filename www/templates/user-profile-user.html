@@ -1,0 +1,113 @@
+<tab-slide-box tab="1">
+    <div class="tsb-icons">
+        <div class="tsb-ic-wrp">
+            <a href="javascript:;">ENDEREÇOS</a>
+            <a href="javascript:;">PERFIL</a>
+            <a href="javascript:;">PAGAMENTO</a>
+            <a href="javascript:;">OUTROS</a>
+        </div>
+    </div>
+    <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+        <ion-slide scroll=true>
+            <ion-list class="list-items user-addresses" ng-show="userProfile.addresses.length > 0">
+                <!--show-delete="showDelete"-->
+                <ion-item class="item" ng-repeat="address in userProfile.addresses">
+                    <!--on-hold="onHold(item)"-->
+                    <p class="title"> {{address.name}} <small>{{address.street}} {{address.number}}</small></p>
+                    <!--<ion-delete-button class="ion-trash-a" ng-click="deleteItem($index)">
+                    </ion-delete-button>-->
+                </ion-item>
+            </ion-list>
+
+            <div class="error" ng-show="userProfile.addresses.length == 0">
+                <p><i class="icon ion-location"></i></p>
+                <p>Ainda não há nenhum endereço cadastrado.</p>
+            </div>
+
+            <!--<button class="button bg-principal button-bottom-right button-bottom-right-slide" ng-click="openPopover($event)"><i class="icon ion-plus"></i></button>-->
+        </ion-slide>
+
+        <ion-slide>
+            <!--{{userProfile}}-->
+            <form name="registerForm" novalidate="" ng-submit="doEditUser(registerForm)">
+                <div class="photo-user text-center">
+                    <img id="user-photo" class="profile-picture" ng-src="{{userProfile.img != '' && userProfile.img || 'img/profile-no-photo.png' }}" ng-click="getPhoto('user-photo')" />
+
+                </div>
+                <div class="user-profile-form">
+                    <label class="item item-input">
+                                <input type="text" style="text-align: center; border: none;" placeholder="Nome" name="name" ng-class="{ 'input-error' : registerForm.name.$invalid && registerForm.$submitted }"  ng-model="userProfile.name" value="userProfile.name" required>
+                            </label>
+
+                    <label class="item item-input">
+                                <input type="email" placeholder="Email" value="{{userProfile.email}}" disabled style="background: #FFF;">
+                            </label>
+
+                    <label class="item item-input">
+                                <input type="text" placeholder="Telefone"  value="{{userProfile.phone}}" disabled style="background: #FFF;">
+                            </label>
+
+
+
+
+                    <button class="button bg-principal button-bottom-right button-bottom-right-slide"><i class="icon ion-arrow-right-c"></i></button>
+                </div>
+            </form>
+        </ion-slide>
+
+
+
+        <ion-slide>
+            <ion-list class="list-items user-addresses" ng-if="userProfile.cards.length" show-delete="showDelete">
+                <ion-item on-hold="onHold()" class="item" ng-repeat="card in userProfile.cards">
+                    <p class="title"> <i class="icon ion-card"></i> {{card.name}} {{card.number}}</p>
+                    <ion-delete-button class="ion-trash-a" ng-click="deleteItem($index)">
+                    </ion-delete-button>
+                </ion-item>
+            </ion-list>
+            <div class="error" ng-if="!userProfile.cards.length">
+                <p><i class="icon ion-card"></i></p>
+                <p>Ainda não há nenhum cartão de crédito cadastrado.</p>
+            </div>
+
+            <button class="button bg-principal button-bottom-right button-bottom-right-slide" ng-click="openPopoverCC($event)"><i class="icon ion-plus"></i></button>
+        </ion-slide>
+
+
+        <ion-slide class="signin-slide">
+            <form name="levelForm" novalidate="" ng-submit="doEditLevel(levelForm)">
+                <div class="row">
+                    <h3>Escolaridade</h3>
+                </div>
+                <div class="row">
+                    <ion-list>
+                        <ion-radio ng-model="userProfile.level" ng-value="1">Fundamental 1</ion-radio>
+                        <ion-radio ng-model="userProfile.level" ng-value="2">Fundamental 2</ion-radio>
+                        <ion-radio ng-model="userProfile.level" ng-value="3">Médio</ion-radio>
+                    </ion-list>
+                </div>
+
+
+                <div class="row">
+                    <h3>Dados Pessoais</h3>
+                </div>
+                <div class="row">
+                    <div class="col col-100">
+                        <input type="text" mask="39/19/9999" restrict="accept" placeholder="Data de Nascimento" ng-model="userProfile.dados.data_nascimento" name="data_nascimento">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-100">
+                        <input type="text" placeholder="Onde vc estuda?" ng-model="userProfile.colegio.nome" name="escola">
+                    </div>
+                </div>
+
+                <button class="button bg-principal button-bottom-right button-bottom-right-slide"><i class="icon ion-arrow-right-c"></i></button>
+                </div>
+            </form>
+
+        </ion-slide>
+
+    </ion-slide-box>
+</tab-slide-box>

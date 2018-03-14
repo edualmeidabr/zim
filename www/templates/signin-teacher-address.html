@@ -1,0 +1,73 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-content class="signin-slide padding" scroll="false">
+        <form name="addressForm" novalidate="" ng-submit="saveAddressTeacher(addressForm)">
+
+
+            <div class="row margin-top">
+                <h3>Bairros atendidos</h3>
+            </div>
+            <div class="row">
+                <div class="col col-100">
+                    <!--<input type="text" placeholder="Nome do bairro">-->
+                    <ion-google-place placeholder="Nome do Bairro" ng-model="neighborhood" name="neighborhood" location-changed="addNeighborhood" style="z-index: 9999" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-100">
+                    <ion-list class="neighborhood">
+                        <ion-item class="item item-icon-right" ng-repeat="bairro in neighArr">
+                            {{bairro.name}}
+                            <i class="icon ion-close" ng-click="remNeighborhood($index)"></i>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <h3>Endereço</h3>
+            </div>
+            <div class="row">
+                <div class="col col-80">
+                    <!--                    <ion-google-place placeholder="Rua" ng-model="userProfile.address.street" name="street" location-changed="selectLocation" style="z-index: 999" ng-class="{ 'input-error' : addressForm.street.$invalid && addressForm.$submitted }" required />-->
+                    <input type="text" placeholder='Rua' ng-model="userProfile.address.street" name="street" ng-class="{ 'input-error' : addressForm.street.$invalid && addressForm.$submitted }" required style="border: none">
+                </div>
+
+                <div class="col col-20">
+
+                    <input type="text" placeholder="Nº" ng-model="userProfile.address.number" name="number" ng-class="{ 'input-error' : addressForm.number.$invalid && addressForm.$submitted }" required style="border: none">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-100">
+                    <input type="text" placeholder="Complemento" ng-model="userProfile.address.comp" style="border: none">
+                </div>
+            </div>
+
+            <div class="row margin-top">
+                <h3>Deslocamento entre as aulas</h3><br>
+            </div>
+            <div class="row">
+                <div class="col col-100">
+
+                    <div class="item range" style="border: none; background: transparent !important;">
+                        <input type="range" ng-model="userProfile.dados.deslocamento" name="deslocamento" min="15" max="125" value="{{userProfile.dados.deslocamento}}" step="4">
+                    </div>
+                    <div class="radius text-center">
+                        <!--<small><span ng-if="userProfile.dados.deslocamento < 30">15 minutos</span> <span ng-if="userProfile.dados.deslocamento >= 30 && userProfile.dados.deslocamento < 45">30 minutos</span> <span ng-if="userProfile.dados.deslocamento >= 45 && userProfile.dados.deslocamento < 60">45 minutos</span> <span ng-if="userProfile.dados.deslocamento >= 60 && userProfile.dados.deslocamento < 90">1 hora</span> <span ng-if="userProfile.dados.deslocamento >= 90 && userProfile.dados.deslocamento < 120">1 hora e meia</span>     <span ng-if="userProfile.dados.deslocamento >= 120">2 horas</span></small>-->
+                        <small><span ng-if="userProfile.dados.deslocamento >= 0 && userProfile.dados.deslocamento < 60">30 minutos</span>  <span ng-if="userProfile.dados.deslocamento >= 60 && userProfile.dados.deslocamento < 90">1 hora</span> <span ng-if="userProfile.dados.deslocamento >= 90 && userProfile.dados.deslocamento < 120">1 hora e meia</span>     <span ng-if="userProfile.dados.deslocamento >= 120">2 horas</span></small>
+                    </div>
+                </div>
+            </div>
+            <!--<button class="button bg-principal button-bottom-left button-bottom-signin" ng-click="loadPersonalData()"><i class="icon ion-arrow-left-c"></i></button>-->
+            <button class="button bg-principal button-bottom-right button-bottom-signin"><i class="icon ion-arrow-right-c"></i></button>
+        </form>
+    </ion-content>
+</ion-view>

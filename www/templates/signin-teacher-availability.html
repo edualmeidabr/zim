@@ -1,0 +1,37 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-content class="signin-slide padding" scroll="false" drag-content="false">
+        <div class="row">
+            <h3>Disponibilidade</h3>
+        </div>
+        <ion-list class="availability">
+            <!--ng-click="showPopupDay()"-->
+            <ion-checkbox ng-model="day.selected" ng-repeat="day in weekDays" ng-click="day.selected && showPopupDay($index)">
+                {{day.name}}
+            </ion-checkbox>
+        </ion-list>
+
+        <!--<div class="item range">
+            <i class="icon ion-volume-low"></i>
+            <ion-custom-range type="double" ng-model="data" min="0" max="14" min-value="3" max-value="6" step="1" style="width: 80%"></ion-custom-range>
+            <i class="icon ion-volume-low"></i>
+        </div>
+-->
+
+        <!--<div class=" item range ">
+            <ion-custom-range type="double " ng-model="data.bulb$index " min="0 " max="{{hours.length-1}} " min-value="3 " max-value="9 " step="1 "></ion-custom-range>
+        </div>
+
+        <div class="radius text-center ">
+            <small> {{hours[data.bulb$index.minValue]}} às {{hours[data.bulb$index.maxValue]}}</small>
+        </div>
+-->
+
+        <!--<button class="button bg-principal button-bottom-left button-bottom-signin " ng-click="loadAddress() "><i class="icon ion-arrow-left-c "></i></button>-->
+
+        <button class="button bg-principal button-bottom-right button-bottom-signin " ng-click="saveAvailability() "><i class="icon ion-arrow-right-c "></i></button>
+    </ion-content>
+</ion-view>

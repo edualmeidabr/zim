@@ -1,0 +1,66 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-content class="padding signin-slide" scroll="false">
+        <form name="personalDataForm" novalidate="" ng-submit="savePersonalData(personalDataForm)">
+            <div class="row">
+                <h3>Dados Pessoais</h3>
+            </div>
+
+            <div class="row">
+                <div class="col col-100">
+                    <!--<input type="text" mask="999.999.999-99" clean="true" restrict="accept" placeholder="CPF" ng-model="userProfile.dados.cpf" name="cpf" ng-class="{ 'input-error' : personalDataForm.cpf.$invalid && personalDataForm.$submitted }" required>-->
+                    <input type="text" ui-mask="999.999.999-99" ui-mask-placeholder ui-mask-placeholder-char="_" placeholder="CPF" ng-model="userProfile.dados.cpf" name="cpf" ng-class="{ 'input-error' : personalDataForm.cpf.$invalid && personalDataForm.$submitted }" required>
+
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-100">
+                    <input type="text" placeholder="RG" ng-model="userProfile.dados.rg" name="rg" ng-class="{ 'input-error' : personalDataForm.rg.$invalid && personalDataForm.$submitted }" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-100">
+                    <!--<input type="text" mask="39/19/9999" clean="true" restrict="accept" placeholder="Data de Nascimento" ng-model="userProfile.dados.data_nascimento" name="data_nascimento" ng-class="{ 'input-error' : personalDataForm.data_nascimento.$invalid && personalDataForm.$submitted }"
+                        required>-->
+                    <input type="text" ui-mask="99/99/9999" ui-mask-placeholder ui-mask-placeholder-char="_" placeholder="Data de Nascimento" ng-model="userProfile.dados.data_nascimento" name="data_nascimento" ng-class="{ 'input-error' : personalDataForm.data_nascimento.$invalid && personalDataForm.$submitted }"
+                        required>
+                </div>
+            </div>
+
+            <div class="row margin-top-2x">
+                <h3>Sexo</h3>
+                <div class="col col-100">
+                    <ion-list>
+                        <ion-radio ng-model="userProfile.dados.sexo" ng-value="'M'">Masculino</ion-radio>
+                        <ion-radio ng-model="userProfile.dados.sexo" ng-value="'F'">Feminino</ion-radio>
+                    </ion-list>
+                </div>
+            </div>
+
+            <div class="row margin-top-2x">
+                <h3>Experiência</h3><br>
+
+                <div class="col col-100">
+
+                    <div class="item range" style="border: none; background: transparent !important;">
+                        <input type="range" ng-model="userProfile.dados.experiencia" name="experiencia" min="0" max="6" value="{{userProfile.dados.experiencia}}">
+                    </div>
+
+                    <div class="radius text-center">
+                        <small><span ng-if="userProfile.dados.experiencia == 0">Nenhuma</span> <span ng-if="userProfile.dados.experiencia == 1">1 ano</span> <span ng-if="userProfile.dados.experiencia > 1 && userProfile.dados.experiencia < 6">{{userProfile.dados.experiencia}} anos</span> <span ng-if="userProfile.dados.experiencia == 6">+5 anos</span></small>
+                    </div>
+                </div>
+            </div>
+
+            <button class="button bg-principal button-bottom-right button-bottom-signin"><i class="icon ion-arrow-right-c"></i></button>
+
+        </form>
+    </ion-content>
+</ion-view>

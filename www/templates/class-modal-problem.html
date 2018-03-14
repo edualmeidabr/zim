@@ -1,0 +1,36 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title"><img src="img/logo.png"></h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeModal()"><i class="icon ion-close"></i></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="user-profile-form padding ">
+            <p class="text-center margin-top-2x "><strong>Qual foi o problema?</strong></p>
+            <form name="problemForm" novalidate="" ng-submit="doProblem(problemForm)">
+                <ion-list class="list-items" name="motivo" style="width: 100% !important; padding: 0 !important; border: none !important;">
+                    <ion-item class="item" style="width: 100% !important; padding: 0 !important; border: none !important;">
+                        <ion-radio ng-class="activated" checked ng-click="changeMotivo('nao_compareceu')" style="border: none !important; width: 100% !important; padding: 0 !important; font-size: 14px !important;">O professor não compareceu</ion-radio>
+                    </ion-item>
+
+                    <ion-item class="item" style="width: 100% !important; padding: 0 !important; border: none !important; border: none !important;">
+                        <ion-radio ng-click="changeMotivo('conteudo')" style="border: none !important; width: 100% !important; padding: 0 !important; font-size: 14px !important;">O conteúdo não foi satisfatório</ion-radio>
+                    </ion-item>
+
+                    <ion-item class="item" style="width: 100% !important; padding: 0 !important; border: none !important;">
+                        <ion-radio ng-click="changeMotivo('nao_portou')" style="border: none !important; width: 100% !important; padding: 0 !important; font-size: 14px !important; word-wrap: normal">
+                            O professor não se portou bem
+                        </ion-radio>
+                    </ion-item>
+                </ion-list>
+
+                <textarea name="texto" ng-model="texto" placeholder="Conte-nos mais sobre o problema" style="width: 100%; padding: 10px; background: #efefef; margin-top: 30px;" rows="5"></textarea>
+
+                <div class="text-center padding">
+                    <button class="button bg-principal button-circled"><i class="icon ion-arrow-right-c"></i></button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-modal-view>

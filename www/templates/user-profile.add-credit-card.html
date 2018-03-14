@@ -1,0 +1,87 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title"><img src="img/logo.png"></h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closePopoverCC()"><i class="icon ion-close"></i></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <form name="cardForm" novalidate="" ng-submit="doAddCard(cardForm)">
+            <div class="user-profile-add-address-form list">
+                <label class="item item-input">							
+                    <input type="text" ng-model="card.name" placeholder="Apelido (P. ex.: Mastercard)" name="name" ng-class="{ 'input-error' : cardForm.name.$invalid && cardForm.$submitted }" required>
+                </label>
+
+                <label class="item item-input">							
+                    <input type="text" ng-model="card.name_print" placeholder="Nome Impresso" name="name" ng-class="{ 'input-error' : cardForm.name.$invalid && cardForm.$submitted }" required>
+                </label>
+
+                <label class="item item-input">							
+                    <input type="text" mask="9999 9999 9999 9999" clear="true" ng-model="card.number" placeholder="Número" name="number" ng-class="{ 'input-error' : cardForm.number.$invalid && cardForm.$submitted }"  required>
+                </label>
+
+                <label class="item item-input">							
+                    <input type="text" mask="999" clear="true" ng-model="card.code" placeholder="Código de Segurança" name="code" ng-class="{ 'input-error' : cardForm.code.$invalid && cardForm.$submitted }"  required>
+                </label>
+
+                <label class="item item-input">	
+                    Validade						
+                    <input type="text" mask="99" clear="true" ng-model="card.month" placeholder="Mês" name="month" ng-class="{ 'input-error' : cardForm.number.$invalid && cardForm.$submitted }"  required>
+                    /
+                    <input type="text" mask="9999" clear="true" ng-model="card.year" placeholder="Ano" name="year" ng-class="{ 'input-error' : cardForm.year.$invalid && cardForm.$submitted }"  required>
+                </label>
+                <h4 style="font-size: 16px; margin-left: 10px;">Dados do Titular do Cartão</h4>
+                <label class="item item-input">							
+                    <input type="text" mask="999.999.999-99" clear="true" ng-model="card.cpf" placeholder="CPF do Titular" name="cpf" ng-class="{ 'input-error' : cardForm.cpf.$invalid && cardForm.$submitted }"  required>
+                </label>
+
+                <label class="item item-input">							
+                    <input type="text" mask="39/19/9999" clear="true" ng-model="card.birth" placeholder="Data de Nascimento do Titular" name="birth" ng-class="{ 'input-error' : cardForm.birth.$invalid && cardForm.$submitted }"  required>
+                </label>
+
+                <label class="item item-input">							
+                    <input type="text" mask="(99)9?9999-9999" clear="true" ng-model="card.phone" placeholder="Telefone do Titular" name="phone" ng-class="{ 'input-error' : cardForm.phone.$invalid && cardForm.$submitted }"  required>
+                </label>
+
+                <h4 style="font-size: 16px; margin-left: 10px;">Endereço de Cobrança</h4>
+                <div class="user-profile-add-address-form list">
+                    <label class="item item-input">						
+                        <input type="text" placeholder="Endereço" name="street" ng-class="{ 'input-error' : cardForm.street.$invalid && cardForm.$submitted }"  ng-model="card.address.street" required>
+                    </label>
+                    <label class="item item-input">							
+                        <input type="text" mask="9?9?9?9" placeholder="Nº" name="number_address" ng-class="{ 'input-error' : cardForm.number_address.$invalid && cardForm.$submitted }"  ng-model="card.address.number" required>
+                    </label>
+                    <label class="item item-input">							
+                        <input type="text" mask="99999-999" clear="true" placeholder="CEP" name="cep" ng-class="{ 'input-error' : cardForm.cep.$invalid && cardForm.$submitted }"  ng-model="card.address.cep" required>
+                    </label>
+                    <label class="item item-input">							
+                        <input type="text" placeholder="Bairro" name="neigh" ng-class="{ 'input-error' : cardForm.neigh.$invalid && cardForm.$submitted }"  ng-model="card.address.neigh" required>
+                    </label>
+                    <label class="item item-input">							
+                        <input type="text" placeholder="Cidade" name="city" ng-class="{ 'input-error' : cardForm.city.$invalid && cardForm.$submitted }"  ng-model="card.address.city" required>
+                    </label>
+
+                    <div class="col">
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Estado
+                            </div>
+                            <select name="uf" ng-model="card.address.uf"  ng-class="{ 'input-error' : cardForm.uf.$invalid && cardForm.$submitted }">
+                                <option  value="AC">Acre</option><option value="AL">Alagoas</option><option value="AM">Amazonas</option><option value="AP">Amapá</option><option value="BA">Bahia</option><option value="CE">Ceará</option><option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option><option value="MA">Maranhão</option><option value="MG">Minas Gerais</option><option value="MS">Mato Grosso do Sul</option><option value="MT">Mato Grosso</option><option value="PA">Pará</option><option value="PB">Paraíba</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option><option value="PR">Paraná</option><option value="RJ" selected>Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="RS">Rio Grande do Sul</option><option value="SC">Santa Catarina</option><option value="SE">Sergipe</option><option value="SP">São Paulo</option><option value="TO">Tocantins</option></select>
+                        </label>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <button class="button bg-principal margin-top-2x button-circled pull-right-2x"><i class="icon ion-arrow-right-c"></i></button>
+
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

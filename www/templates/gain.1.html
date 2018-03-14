@@ -1,0 +1,27 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+
+    <ion-content scroll="false" padding="">
+        <div class="gain" ng-show="gain.total > 0">
+            <div class="week">
+                <div class="valor">R${{gain.semana}}</div>
+                <div class="descricao">Próximo Saque</div>
+            </div>
+            <div class="total">
+                <div class="valor">R${{gain.total}}</div>
+                <div class="descricao">Ganhos totais</div>
+            </div>
+
+            <div class="obs padding text-center">
+                <small>*Valores com descontos pelo uso da plataforma</small>
+            </div>
+        </div>
+
+        <div class="error" ng-show="gain.total <= 0">
+            <p><i class="icon ion-cash"></i></p>
+            <p>Você ainda não tem ganhos programados</p>
+        </div>
+    </ion-content>
+</ion-view>

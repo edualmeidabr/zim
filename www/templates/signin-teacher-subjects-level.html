@@ -1,0 +1,7 @@
+<ion-content scroll="false">
+    <ion-list>
+
+        <ion-checkbox ng-model="level.selected" ng-repeat="level in subjectLevel" ng-click="selectLevel($index, level.selected)">{{level.name}}</ion-checkbox>
+
+    </ion-list>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-modal-view class="modal-schedule">
+    <ion-header-bar style="position: relative; margin: 0 !important;">
+
+        <div class="buttons">
+            <button class="button button-icon" ng-click="closeModalDay()">
+                <i class="icon ion-close"></i>
+            </button>
+        </div>
+
+        <div class="header-date">
+            <div class="day">{{day}}</div>
+            <div class=" date ">{{month}} / {{year}}</div>
+        </div>
+    </ion-header-bar>
+
+    <ion-content style="position: relative; margin: 0 !important; ">
+        <h4 style="margin: 0 !important; text-align: center;">Aulas agendadas</h4>
+        <ion-list class="classes-list schedule-teacher-list" ng-show="itemsScheduleDay.length > 0">
+            <ion-item ng-repeat="item in itemsScheduleDay">
+                <ion-list class="list-items schedule-teacher-item-list">
+                    <ion-item class="item" ng-repeat="itemHour in item.hour">
+                        <div class="avatar">
+                            <img ng-src="{{itemHour.avatar.length ? itemHour.avatar : 'img/profile-no-photo.png'}}" width="" class="avatar">
+                        </div>
+                        <div class="name-container">
+                            <div class="name">{{itemHour.name}}</div>
+                            <div class="duration">{{itemHour.duration}}</div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-item>
+        </ion-list>
+
+        <div ng-show="itemsScheduleDay.length <= 0" style="position: relative; margin: 0 auto !important; text-align: center; ">
+            <p>Nenhuma aula agendada</p>
+        </div>
+
+        <h4 style="margin: 20px 0 !important; text-align: center;">Alterar disponibilidade do dia</h4>
+
+        <div ng-show="!is_indisponivel" style="text-align: center;">
+            <button class="button start-hour " ng-click="openHour() ">
+                <span ng-show="hour=='' "><i class="icon ion-clock "></i> Hora do início</span><span class="hour " ng-show="hour !='' ">{{hour}}</span>
+            </button>
+
+            <button class="button start-hour " ng-click="openHourFim() ">
+                <span ng-show="hourFim=='' "><i class="icon ion-clock "></i> Hora do fim</span><span class="hour " ng-show="hourFim !='' ">{{hourFim}}</span>
+            </button>
+        </div>
+
+        <ion-checkbox ng-model="is_indisponivel" ng-click="changeCheckBox(is_indisponivel)" ng-true-value="true" ng-false-value="false">Ficar indisponível</ion-checkbox>
+        <button class="button bg-principal margin-top-2x button-circled pull-right" ng-click="changeDisponibilityDay() "><i class="icon ion-arrow-right-c"></i></button>
+
+
+
+    </ion-content>
+
+    <!--<ion-footer-bar></ion-footer-bar>-->
+</ion-modal-view>

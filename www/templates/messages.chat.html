@@ -1,0 +1,29 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content>
+        <ion-list class="messages-list-chat">
+            <ion-item class="item-chat " ng-repeat="item in messagesChat" ng-class="{ 'item-avatar-right': !item.me}">
+                <img ng-if="item.me" ng-src="{{avatarMe.length ? avatarMe : 'img/profile-no-photo.png'}}">
+                <img ng-if="!item.me" ng-src="{{avatarUser.length ? avatarUser : 'img/profile-no-photo.png'}}">
+
+                <div class="text-container" ng-class="{'me' : item.me}">
+                    <div class="text item-text-wrap">
+                        {{item.text}}
+                    </div>
+                </div>
+
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-footer-bar class="footer-chat">
+        <div class="col col-90">
+            <textarea ng-model="msgChat" placeholder="Digite uma mensagem"></textarea>
+        </div>
+        <div class="col col-10">
+            <button class="button" ng-click="sendMsg()"><i class="icon ion-paper-airplane"></i>
+        </div>
+    </ion-footer-bar>
+</ion-view>

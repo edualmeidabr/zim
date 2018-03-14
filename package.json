@@ -1,0 +1,51 @@
+{
+  "name": "ionic-project",
+  "version": "1.1.1",
+  "description": "An Ionic project",
+  "dependencies": {
+    "@ionic-native/geolocation": "^3.4.4",
+    "angular-input-masks": "^2.5.0",
+    "chart.js": "^2.5.0",
+    "cordova-browser": "^4.1.0",
+    "cordova-plugin-camera": "^2.4.1",
+    "cordova-plugin-geolocation": "~2.4.2",
+    "cordova-plugin-inappbrowser": "~1.7.0",
+    "cordova-plugin-ionic": "^3.1.2",
+    "cordova-plugin-splashscreen": "~4.0.1",
+    "cordova-plugin-statusbar": "~2.2.1",
+    "cordova-plugin-whitelist": "~1.3.1",
+    "gulp": "^3.5.6",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4",
+    "ionic-plugin-keyboard": "~2.2.1",
+    "ionic-toast": "^0.4.1",
+    "phonegap-plugin-push": "~1.10.5"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-geolocation": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "ionic-plugin-keyboard": {},
+      "phonegap-plugin-push": {
+        "SENDER_ID": "852911291177"
+      },
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "Este app usa  algumas funções da câmera",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "Este app acessa a sua galeria de imagens para algumas funções"
+      }
+    },
+    "platforms": [
+      "browser"
+    ]
+  }
+}

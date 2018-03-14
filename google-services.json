@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "852911291177",
+    "firebase_url": "https://zimapp-1490206781916.firebaseio.com",
+    "project_id": "zimapp-1490206781916",
+    "storage_bucket": "zimapp-1490206781916.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852911291177:android:fa023dda14ea4d4e",
+        "android_client_info": {
+          "package_name": "com.zim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852911291177-g0rs4l3tfp3rkkt8shcva7tl1cs4e30n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-5lQstsQSwUcHDmznyQmv3y8Wtxf3FeY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

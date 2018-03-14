@@ -1,0 +1,42 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content>
+        <ion-content>
+            <ion-list class="classes-list schedule-teacher-list" ng-show="itemsSchedule.length > 0">
+                <ion-item ng-repeat="item in itemsSchedule">
+                    <!--href="#/app/messages/item.id"-->
+                    <div class="title-container">
+                        <div class="title">
+                            <span>{{item.title}}</span>
+                        </div>
+                    </div>
+
+                    <ion-list class="list-items schedule-teacher-item-list">
+                        <ion-item class="item" ng-repeat="itemHour in item.hour" ng-click="openClass(itemHour)">
+                            <!--href="href="#/app/teacherclass/{{$index}}""-->
+                            <div class="hour">
+                                {{itemHour.hour}}
+                            </div>
+                            <div class="avatar">
+                                <img ng-src="{{itemHour.avatar.length ? itemHour.avatar : 'img/profile-no-photo.png'}}" width="" class="avatar">
+                            </div>
+                            <div class="name-container">
+                                <div class="name">{{itemHour.name}}<br><small class="status " ng-class="[itemHour.status]">{{itemHour.descriptionStatus}}</small></div>
+                                <div class="duration">{{itemHour.duration}}</div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                </ion-item>
+            </ion-list>
+
+            <div class="error" ng-show="itemsSchedule.length <= 0">
+                <p><i class="icon ion-social-buffer"></i></p>
+                <p>Você ainda não tem aulas agendadas</p>
+            </div>
+
+        </ion-content>
+
+    </ion-content>
+</ion-view>

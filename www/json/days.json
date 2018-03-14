@@ -1,0 +1,67 @@
+[{
+        "id": 1,
+        "name": "Segunda",
+        "shift": {
+            "first": "",
+            "last": ""
+        },
+        "shifts": [],
+        "selected": false
+    },
+    {
+        "id": 2,
+        "name": "Terça",
+        "shift": {
+            "first": "",
+            "last": ""
+        },
+        "shifts": [],
+        "selected": false
+    },
+    {
+        "id": 3,
+        "name": "Quarta",
+        "shift": {
+            "first": "",
+            "last": ""
+        },
+        "shifts": [],
+        "selected": false
+    }, {
+        "id": 4,
+        "name": "Quinta",
+        "shift": {
+            "first": "",
+            "last": ""
+        },
+        "shifts": [],
+        "selected": false
+    }, {
+        "id": 5,
+        "name": "Sexta",
+        "shift": {
+            "first": "",
+            "last": ""
+        },
+        "shifts": [],
+        "selected": false
+    }, {
+        "id": 6,
+        "name": "Sábado",
+        "shift": {
+            "first": "",
+            "last": ""
+        },
+        "shifts": [],
+        "selected": false
+    }, {
+        "id": 0,
+        "name": "Domingo",
+        "shift": {
+            "first": "",
+            "last": ""
+        },
+        "shifts": [],
+        "selected": false
+    }
+]

@@ -1,0 +1,26 @@
+[{
+        "id": 1,
+        "name": "Manhã",
+        "first": "07:00",
+        "last": "12:00",
+        "selected": false
+    }, {
+        "id": 2,
+        "name": "Tarde",
+        "first": "12:00",
+        "last": "18:00"
+    }, {
+        "id": 3,
+        "name": "Noite",
+        "first": "18:00",
+        "last": "22:00",
+        "selected": false
+    },
+    {
+        "id": 4,
+        "name": "Personalizado",
+        "first": "10:00",
+        "last": "16:00",
+        "selected": false
+    }
+]

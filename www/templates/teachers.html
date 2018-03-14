@@ -1,0 +1,55 @@
+<ion-view>
+    <ion-nav-title>
+        <img src="img/logo.png">
+    </ion-nav-title>
+    <ion-content>
+        <div class="item item-input-inset" style="border: none; width: 100%; max-width: 100%;" ng-show="teacherList.length > 0">
+
+            <label class="item-input-wrapper" style="width: 100% !important; max-width: 100%;">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" style="width: 100%; border: none !important;" ng-model="searchInput.filter" placeholder="Procurar Professor" >
+            </label>
+            <!--<span class="button" ng-click="showDatepicker()">
+                    <i class="icon ion-calendar placeholder-icon"></i>
+            </span>-->
+        </div>
+        <!--
+        <div class="row">
+            <div class="col-xs-12" style="margin: 0 auto;">
+                <onezone-datepicker datepicker-object="onezoneDatepicker"></onezone-datepicker>
+            </div>
+        </div>
+-->
+
+        <ion-list class="list-items teachers-list" ng-show="teacherList.length > 0">
+            <ion-item class="item" ng-repeat="teacher in teacherList | filter:searchInput.filter" ng-click="chooseTeacher(teacher)">
+                <!--/{{subject.id}}-->
+
+                <div class="icon-container">
+                    <div class="ico-item" ng-style="teacher.img != '' && {'background-image': 'url({{teacher.img}})'} || {'background-image': 'url(img/profile-no-photo.png)'}" ng-style="img/{{teacher.img}})"></div>
+                </div>
+
+                <div class="title-container">
+                    <div class="title" ng-class="{'title-mini' : teacher.name.length > 19}">
+                        <span>{{teacher.name}}<br>
+                        <small class="price">Hora/aula R${{formatMoney(teacher.price)}}</small>
+                    </div>
+                </div>
+
+
+                <div class="list-rating">
+                    <div class="rating-s" style="width: {{teacher.ratingPercentage}}%"></div>
+                    <div class="rating-o"></div>
+                    <div class="rating-text" ng-show="teacher.ratingTotal > 0">{{teacher.rating}}({{teacher.ratingTotal}})</div>
+                    <div class="rating-text rating-text-mini" ng-show="teacher.ratingTotal <= 0">Sem avaliações</div>
+                </div>
+                <!--<i class="icon ion-chevron-right"></i>-->
+            </ion-item>
+        </ion-list>
+
+        <div class="error" ng-show="teacherList.length <= 0">
+            <p><i class="icon ion-university"></i></p>
+            <p>Ops... Não encontramos professores por perto.</p>
+        </div>
+    </ion-content>
+</ion-view>
