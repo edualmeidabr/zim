@@ -66,12 +66,10 @@
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
         <string>Por favor, permita ao Zim saber a sua localização para o agendamento da sua aula.</string>
     </edit-config>
-    <engine name="browser" spec="^4.1.0" />
     <plugin name="cordova-plugin-camera" spec="^2.4.1">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Este app usa  algumas funções da câmera" />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Este app acessa a sua galeria de imagens para algumas funções" />
     </plugin>
-    <plugin name="cordova-plugin-geolocation" spec="~2.4.2" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.7.0" />
     <plugin name="cordova-plugin-statusbar" spec="~2.2.1" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
