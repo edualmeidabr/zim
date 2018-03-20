@@ -6,6 +6,7 @@
         "angular-input-masks": "^2.5.0",
         "chart.js": "^2.5.0",
         "cordova-browser": "^4.1.0",
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-camera": "^2.4.1",
         "cordova-plugin-inappbrowser": "~1.7.0",
         "cordova-plugin-ionic": "^3.1.2",
@@ -25,7 +26,9 @@
                 "CAMERA_USAGE_DESCRIPTION": "Este app usa  algumas funções da câmera",
                 "PHOTOLIBRARY_USAGE_DESCRIPTION": "Este app acessa a sua galeria de imagens para algumas funções"
             }
-        }
-
+        },
+        "platforms": [
+            "ios"
+        ]
     }
 }
